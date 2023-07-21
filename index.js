@@ -6,6 +6,8 @@ const cors = require("cors");
 
 const mongoose = require("mongoose");
 
+const userRoutes = require("./routes/user.route");
+
 const app = express();
 
 // variables
@@ -25,6 +27,9 @@ app.use(
 app.get("/", (req, res) => {
   res.status(200).json({ message: "welcome to dazzle martserver" });
 });
+
+// bypassed apis
+app.use("/api/user", userRoutes);
 
 // database
 mongoose
