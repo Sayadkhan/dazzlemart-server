@@ -40,7 +40,7 @@ const getAllUsers = async (req, res) => {
 
     res.status(200).json(users);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(403).json({ error: error.message });
   }
 };
 
